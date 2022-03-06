@@ -5,15 +5,15 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="stylesheet" href="css/main.css">
-    <script defer src="js/script.js"></script>
-    <title>Mon Horloge</title>
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <title>Digit Horloge</title>
 </head>
+<body>
 
-<body class="dark" onload="startTime()">
-<main>
-    <section id="current-day">
+<main id="main-content">
+    <div class="days">
         <ul>
             <li><span id="lundi">Lundi</span></li>
             <li><span id="mardi">Mardi</span></li>
@@ -23,23 +23,17 @@
             <li><span id="samedi">Samedi</span></li>
             <li><span id="dimanche">Dimanche</span></li>
         </ul>
-    </section>
+    </div>
 
-    <section id="time">
-        <div id="time-hours">
-            <span class="error">Désolé quelque chose ne semble pas fonctionner ...</span>
-        </div>
-
-        <div id="time-format">
-            <div id="short">
-                <a>12 Heures</a>
-            </div>
-            <div id="long">
-                <a>24 Heures</a>
-            </div>
-        </div>
-    </section>
-
+    <div class="clock" data-format="12">
+        <h1>00 : 00 : 00 AM</h1>
+    </div>
+    <div class="format">
+        <span id="format-12" data-format="12">12 Hours</span>
+        <span id="format-24" data-format="24">24 Hours</span>
+    </div>
 </main>
+
+<script src="js/clock.js"></script>
 </body>
 </html>
