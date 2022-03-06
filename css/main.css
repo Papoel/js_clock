@@ -1,134 +1,79 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300&display=swap');
 
-/*********** <Reset CSS> ***********/
-* ::before, ::after {
+*, ::before, ::after {
     margin: 0;
     padding: 0;
-}
-
-body {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
     box-sizing: border-box;
 }
 
-/*********** </Reset CSS> ***********/
-
-/*********** <Globals Parameter> ***********/
+/*********** <Graphic charts Parameter> ***********/
 :root {
-    --main-bg-color: #191919;
-    --main-text-primary: #00FF97;
-    --main-secondary-text: #8A8A8A;
+    --bg-color: #191919;
+    --text-primary: #00FF97;
+    --text-secondary: #8A8A8A;
 }
 
-.dark {
-    background-color: var(--main-bg-color);
-    color: rgb(156 163 175);
+/*********** </Graphic charts Parameter> ***********/
+
+html {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 30px;
 }
 
-.text-green {
-    color: var(--main-text-primary);
-}
-
-/*********** </Globals Parameter> ***********/
-
-main {
+#main-content {
+    height: 100vh;
+    width: 100%;
     display: flex;
-    justify-content: center;
     align-items: center;
-    flex-direction: column;
-}
-
-/*********** <Affichage des jours> ***********/
-#current-day {
-    padding: 0;
-    display: flex;
     justify-content: center;
-    margin-top: 20px;
+    flex-direction: column;
+    text-align: center;
+    background-color: var(--bg-color);
 }
 
-#current-day li {
+#main-content ul {
+    padding-bottom: 50px;
+}
+
+#main-content li {
     list-style: none;
     display: inline-block;
 }
 
-#current-day li span {
+#main-content li span {
     position: relative;
-    color: #414141;
-    font-size: 1.3rem;
+    color: var(--text-secondary);
+    font-size: 22px;
     font-weight: 400;
     display: block;
     overflow: hidden;
     transition: 0.7s all;
-    padding: 14px 30px;
+    padding: 10px 15px;
     text-transform: uppercase;
 }
 
-/*********** </Affichage des jours> ***********/
-
-/*********** <Affichage de l'heure> ***********/
-#time {
-    margin: 0;
-    padding: 0;
+#main-content .clock {
+    color: var(--text-primary);
 }
 
-#time-hours {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 12em;
-    height: 230px;
-    color: var(--main-text-primary);
+#main-content .format {
+    color: var(--text-secondary);
+    font-family: 'Kalam', cursive;
+    font-size: 24px;
+    margin-top: 2.5rem;
 }
 
-#time-hours div::after {
-    content: ':';
-}
-
-#time-hours div:last-child::after {
-    content: '';
-}
-
-.error {
-    color: #DC134C;
-    font-size: 1.6rem;
-    padding: 200px;
-}
-
-/*********** </Affichage de l'heure> ***********/
-
-/*********** <Format de l'affichage> ***********/
-#time-format {
-    display: flex;
-    justify-content: space-evenly;
-}
-
-#time-format .long, .short {
-    font-size: 1.3em;
-    margin-top: -50px;
+#main-content .format span {
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    font-family: 'Orbitron', sans-serif;
+    margin: -50px 2em 0;
+    cursor: pointer;
 }
 
 .active {
-    color: var(--main-text-primary);
+    color: var(--text-primary) !important;
 }
-
-#time-format a {
-    font-size: 1.3em;
-}
-
-#time-format a:hover {
-    cursor: pointer;
-    border-bottom: 3px solid var(--main-text-primary);
-    transition: 0.7s all;
-}
-
-#time-format a:hover::before {
-    content: '';
-    transition: 0.7s all;
-    padding-right: 6px;
-    border-left: 3px solid var(--main-text-primary);
-    margin-left: -4px;
-}
-
-
-/*********** </Format de l'affichage> ***********/
